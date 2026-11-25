@@ -1,0 +1,49 @@
+COE180.1 Introduction to Hardware Description Language
+Lab 7 Pre-lab: Registers and Shift Registers
+Student: Jan Michael De Chavez
+
+================================================================================
+PRE-LAB QUESTIONS & ANSWERS (10 Points)
+================================================================================
+
+--------------------------------------------------------------------------------
+Question 1:
+A 4-bit shift-left register starts at 0000. Shift in the serial bit sequence
+1, 0, 1, 1 (first bit first, entering at bit 0). List the 4-bit register value
+after each of the four clock edges. What would the final value be if shifted
+right (entering at bit 3) instead?
+
+Answer:
+Initial State: 0000
+
+Shift Left (serial bit entering at LSB bit 0, shifting bits left towards MSB bit 3):
+- Edge 1 (shift in 1): 0001
+- Edge 2 (shift in 0): 0010
+- Edge 3 (shift in 1): 0101
+- Edge 4 (shift in 1): 1011
+
+Final value after 4 clock edges (Shift Left): 1011
+
+If shifted right instead (serial bit entering at MSB bit 3, shifting bits right towards LSB bit 0):
+- Edge 1 (shift in 1): 1000
+- Edge 2 (shift in 0): 0100
+- Edge 3 (shift in 1): 1010
+- Edge 4 (shift in 1): 1101
+
+Final value after 4 clock edges (Shift Right): 1101
+
+--------------------------------------------------------------------------------
+Question 2:
+Explain in two sentences why omitting the final else branch inside an always_ff
+block creates a hold operation rather than an unintended latch bug.
+
+Answer:
+An always_ff block with an edge-triggered sensitivity list (@(posedge clk)) instructs the synthesis tool to infer edge-triggered D flip-flops instead of level-sensitive transparent latches. When all if / else-if conditions evaluate to false without an explicit else branch, the inferred multiplexer simply loops the flip-flop's current output Q back to its D input, preserving the stored state as a synchronous hold operation.
+
+--------------------------------------------------------------------------------
+Question 3:
+Write the single SystemVerilog concatenation expression that shifts an 8-bit
+register data[7:0] right by one bit while inserting serial bit rx_bit into the MSB.
+
+Answer:
+data <= {rx_bit, data[7:1]};

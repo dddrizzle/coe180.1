@@ -1,0 +1,62 @@
+# ============================================================
+# COE 180.1 Git Ignore
+# ============================================================
+
+# Reports & Documentation (explicitly excluded as requested)
+**/report/
+**/report/**
+**/docs/
+**/docs/**
+**/docu/
+**/docu/**
+*.pdf
+*.docx
+*.zip
+
+# Simulation Outputs, Waveforms & Logs
+*.vvp
+*.vcd
+sim/*.vvp
+sim/*.vcd
+*.log
+*.wlf
+msim_transcript
+
+# Quartus Prime & ModelSim Generated Files
+db/
+incremental_db/
+output_files/
+hc_output/
+simulation/
+**/simulation/**
+rtl_work/
+**/rtl_work/**
+c5_pin_model_dump.txt
+**/c5_pin_model_dump.txt
+*.rpt
+*.qws
+*.summary
+*.done
+*.jdi
+*.pin
+*.pof
+*.sof
+*.sld
+*.smsg
+*.bak
+*.sft
+*.vo
+*.xrf
+*.qdb
+*.qpg
+*.qtl
+*.vmake
+
+# Scratch & IDE Metadata
+**/scratch/
+**/scratch/**
+prompt.txt
+.idea/
+.vscode/
+Thumbs.db
+.DS_Store

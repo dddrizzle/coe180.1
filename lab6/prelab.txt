@@ -1,0 +1,15 @@
+PRE-LAB – LAB 6
+
+• 1. An SR latch made of cross-coupled NOR gates has this truth table:
+  - (S=0, R=0): Hold (keeps previous Q and Q_bar)
+  - (S=0, R=1): Reset (Q = 0, Q_bar = 1)
+  - (S=1, R=0): Set (Q = 1, Q_bar = 0)
+  - (S=1, R=1): Forbidden (Q = 0, Q_bar = 0)
+  The equations for each output are:
+  - Q = ~(R | Q_bar)
+  - Q_bar = ~(S | Q)
+  The input pair S=1, R=1 is forbidden because it forces both Q and Q_bar to 0 at the same time, which breaks the rule that they must be complements of each other (Q != Q_bar). Also, if both inputs drop back from 1 to 0 at the exact same moment, the gates race each other and the final output becomes unpredictable.
+
+• 2. When a D latch has enable en=1, it is transparent, meaning the output q follows whatever d does. If d toggles back and forth while en=1, q toggles right along with it. When en drops to 0, q freezes and holds the last value of d. In contrast, a rising-edge D flip-flop only looks at d at the exact moment the clock goes from 0 to 1. Any changes to d before or after that rising edge are ignored, and q stays constant for the rest of the clock cycle. They differ because the latch is level-sensitive and responds as long as enable is high, while the flip-flop is edge-triggered and only captures data on the clock edge.
+
+• 3. A flip-flop with synchronous reset waits for the next active clock edge (such as rising edge of clk) before it resets q to 0. A flip-flop with asynchronous reset resets q to 0 immediately as soon as the reset button/signal is pressed, without waiting for any clock edge.

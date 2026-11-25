@@ -1,0 +1,6 @@
+PRE-LAB – LAB 3
+
+• 1. Multiplexers are primarily used for switching data paths and routing multiple inputs to a single output line, but they can also be used to realize general logic functions.
+• 2. It is called a data selector because its basic function is to use select lines to choose one of several input lines and connect it to a single output line.
+• 3. The enable input activates the multiplexer output when the input signal is zero (active low) and allows multiple multiplexers to be cascaded together to form larger multiplexers.
+• 4. A 32:1 MUX will have 5 select lines since 2^5 = 32 (log2(32) = 5).

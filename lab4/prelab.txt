@@ -1,0 +1,5 @@
+PRE-LAB – LAB 4
+
+• 1. A decoder converts an n-bit binary input code into 2^n output lines, activating only the specific output line corresponding to that code. In contrast, a data distributor takes a single data input line and directs that data signal to one of multiple output lines based on select lines (the opposite of a data selector / multiplexer). While a decoder activates an output line based on an input code, a data distributor routes an incoming data signal to a selected output.
+• 2. A 5-to-32 decoder has 32 output lines since 2^5 = 32.
+• 3. A decoder can drive a 7-segment display by converting a binary input code (such as a 4-bit hexadecimal value) into output lines that illuminate the specific combination of segments (a through g) required for each character, configured as active-high (common cathode) or active-low (common anode).
